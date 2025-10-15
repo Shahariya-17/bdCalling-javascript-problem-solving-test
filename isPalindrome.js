@@ -6,23 +6,25 @@
 // Input: isPalindrome("hello")
 // Output: false
 
-function isPalindrome(str) {
-  
-  const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, '');
-  
-  const len = cleaned.length;
-  
-  
-  for (let i = 0; i < len / 2; i++) {
-    if (cleaned[i] !== cleaned[len - 1 - i]) {
-      return false; 
+function isPalindrome(str){
+    let lower = str.toLowerCase()
+    let newStr = ''
+    let letters = 'abcdefghijklmnopqrstuvwxyz'
+    for (let i = 0; i < str.length; i++) {
+        if (letters.includes(lower[i])) {
+            newStr += lower[i]
+        }
     }
-  }
-  
-  return true; 
+    
+    if (newStr === newStr.split('').reverse().join('')) {
+        return true;
+    }
+    
+    else{
+        return false;
+    }
 }
 
-
-console.log(isPalindrome("A man, a plan, a canal: Panama")); 
-console.log(isPalindrome("hello")); 
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(isPalindrome("hello"));
 
