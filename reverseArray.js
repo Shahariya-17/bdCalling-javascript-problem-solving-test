@@ -5,6 +5,7 @@
 // Output: [4, 3, 2, 1]
 
 function reverseArray(arr) {
+    
   let newArr = [];
 
   for (let i = arr.length - 1; i >= 0; i--) {

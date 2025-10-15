@@ -5,12 +5,17 @@
 
 function countOccurrences(cars) {
   return cars.reduce(function(counts, car) {
+
     if (counts[car.make]) {
       counts[car.make] += 1;
-    } else {
+    }
+
+    else {
       counts[car.make] = 1;
     }
+
     return counts;
+    
   }, {});
 }
 
